@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class project {
+    static int toplam(int a, int b) {
+        int result = (a + b);
+        System.out.println("Toplama :" + result);
+        return result;
+    }
+
+    static int cikar(int a, int b) {
+        int result = (a - b);
+        System.out.println("Cikarma :" + result);
+        return result;
+    }
+
+    static int carp(int a, int b) {
+        int result = a * b;
+        System.out.println("Carpma :" + result);
+        return result;
+    }
+
+    static double bolm(double a, double b) {
+        if (b == 0) {
+            System.out.println("ikinci sayi sifir olamaz!");
+            return 0;
+        }
+      double result = a / b;
+        System.out.println("Bolme :" + result);
+        return result;
+
+    }
+
+    static int us(int a, int b) {
+        int result = 1;
+
+        for (int i = 1; i <= b; i++) {
+            result *= a;
+
+        }
+        System.out.println("Us hesabi :" + result);
+        return result;
+    }
+
+    static int mod(int a, int b) {
+        int result = a % b;
+        System.out.println("Mod islemi :" + result);
+        return result;
+
+    }
+
+    static int alan(int a, int b) {
+        System.out.println("Alan :" + a * b);
+        System.out.println("Cevre :" + (a + b) * 2);
+        return 1;
+
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int select;
+        String menu = "1- Toplama\n"
+                + "2- Cikarma\n"
+                + "3- Carpma\n"
+                + "4- Bolme\n"
+                + "5- Us alma\n"
+                + "6- Mod alma\n"
+                + "7- Dikdortgen alani ve cevre hesabi\n"
+                + "0- Cikis yap";
+        System.out.println(menu);
+        System.out.print("Secim yapiniz :");
+        select = scan.nextInt();
+
+
+        while (true) {
+            if (select == 0) {
+                break;
+            }
+            System.out.print("ilk sayi :");
+            int a = scan.nextInt();
+            System.out.print("ikinci sayi :");
+            int b = scan.nextInt();
+
+            switch (select) {
+                case 1:
+                    toplam(a, b);
+                    break;
+                case 2:
+                    cikar(a, b);
+                    break;
+                case 3:
+                    carp(a, b);
+                    break;
+                case 4:
+                    bolm(a, b);
+                    break;
+                case 5:
+                    us(a, b);
+                    break;
+                case 6:
+                    mod(a, b);
+                case 7:
+                    alan(a, b);
+                    break;
+                default:
+                    System.out.print("Gecersiz bir islem yaptiniz.");
+            }
+
+        }
+        System.out.print("Gule gule..");
+
+    }
+
+
+}
+
+
+
